@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contrôle des LED</title>
+</head>
+
+<body>
+    <h1>Contrôle des LED</h1>
+    <button onclick="envoyerRequete('LED0')">Eteindre LED </button>
+    <button onclick="envoyerRequete('LED1')">Allumer LED </button>
+
+    <script>
+        function envoyerRequete(message) {
+            var xhr = new XMLHttpRequest();
+            var ipServeur = "192.168.1.14"; // Remplacez ceci par l'adresse IP de votre serveur
+            var url = "http://" + ipServeur + "/" + encodeURIComponent(message);
+            
+            xhr.open("GET", url, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        console.log("Requête envoyée avec succès.");
+                    } else {
+                        console.error("Erreur lors de la requête : " + xhr.status);
+                    }
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>
