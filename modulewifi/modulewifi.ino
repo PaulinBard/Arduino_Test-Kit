@@ -2,8 +2,8 @@
 
 SoftwareSerial ESP(10, 11); // TX, RX
 
-String SSID = "Livebox-FCE0";
-String PASS = "rECTTYQTppKYge6P3E";
+String SSID = "ssid";
+String PASS = "pass";
 
 bool isSetup;
 // AT+CWLAP  wifiscan
