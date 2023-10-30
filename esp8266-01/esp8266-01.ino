@@ -6,8 +6,8 @@
 ESP8266WebServer Webserver(80);
 
 // Replace with your network credentials
- const char* ssid = "Livebox-FCE0";
- const char* password = "rECTTYQTppKYge6P3E";
+ const char* ssid = "ssid";
+ const char* password = "pssw";
 
 String HTMLpage = "";
 int LED = 2;
